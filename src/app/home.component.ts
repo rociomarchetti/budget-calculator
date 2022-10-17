@@ -1,42 +1,31 @@
-import { Component } from '@angular/core';
-import { Validators } from '@angular/forms';
+import { BudgetService } from './services/budget.service';
 
-interface service {
-  name: string;
-  price: number;
-}
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.component.html',
   styleUrls: ['home.component.css'],
 })
+
 export class HomeComponent {
-  precioTotal: number = 0;
-  acumulador: number = 0;
 
-  services: service[] = [
-    { name: 'web', price: 500 },
-    { name: 'seo', price: 300 },
-    { name: 'ads', price: 200 },
-  ];
+  precioTotal: number;
 
-  sumar(evento: any): void {
-    let optionChecked: boolean = evento.currentTarget.checked;
+  constructor(public BudgetService: BudgetService) {
+    this.precioTotal = this.BudgetService.precioTotal;   
+  }
 
-    for (let service in this.services) {
-      if (
-        optionChecked &&
-        evento.target.defaultValue === this.services[service].name
-      ) {
-        this.acumulador = this.acumulador + this.services[service].price;
-      } else if (
-        optionChecked === false &&
-        evento.target.defaultValue === this.services[service].name
-      ) {
-        this.acumulador = this.acumulador - this.services[service].price;
-      }
-    }
-    this.precioTotal = this.acumulador;
+  sumar(evento: any) {
+    this.BudgetService.sumar(evento);
+    this.precioTotal = this.BudgetService.precioTotal;   
+    return this.precioTotal;
+  }
+
+  webOption: boolean = false;
+
+  activationModal(event: any) {
+    this.webOption = event.currentTarget.checked;
+    return this.webOption;
   }
 }
