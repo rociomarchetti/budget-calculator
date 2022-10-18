@@ -8,8 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['panel.component.css'],
 })
 export class PanelComponent {
-  numPaginas: number = 1;
-  numIdiomas: number = 1;
+  numPaginas: number;
+  numIdiomas: number;
 
   formularioWeb: FormGroup = this.fb.group({
     paginas: [, [Validators.required, Validators.min(1)]],
@@ -18,9 +18,10 @@ export class PanelComponent {
 
   @Output() mostrarTotal = new EventEmitter<number>();
 
-  constructor(private fb: FormBuilder, public BudgetService: BudgetService) {}
-
-  //Nueva función para los inputs:
+  constructor(private fb: FormBuilder, public BudgetService: BudgetService) {
+    this.numPaginas = this.formularioWeb.controls['paginas'].value;
+    this.numIdiomas = this.formularioWeb.controls['idiomas'].value;
+  }
 
 ngOnInit(): void {
 
@@ -34,6 +35,30 @@ ngOnInit(): void {
     this.mostrarTotal.emit(this.BudgetService.agregarWebService(numPaginas, numIdiomas))
   })
 }
+
+sumar(service: string) {
+  if (service === 'paginas') { 
+    this.numPaginas++;
+    this.BudgetService.agregarWebService( this.numPaginas, this.numIdiomas )
+  }
+  if(service === 'idiomas') {
+    this.numIdiomas++;
+    this.BudgetService.agregarWebService(this.numPaginas, this.numIdiomas)
+  }
+}
+
+restar(service: string) {
+  if (service === 'paginas') {
+    this.numPaginas--;
+    this.BudgetService.agregarWebService( this.numPaginas, this.numIdiomas )
+  }
+  if(service === 'idiomas') {
+    this.numIdiomas--;
+    this.BudgetService.agregarWebService(this.numPaginas, this.numIdiomas)
+  }
+}
+
+
 
   campoNoEsValido(campo: string) {
     return (

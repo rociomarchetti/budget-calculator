@@ -7,6 +7,9 @@ export class BudgetService {
   acumulador: number = 0;
   webServiceResult: number = 0;
 
+  numPaginas: number = 1;
+  numIdiomas: number = 1;
+
   services: Service[] = [
     { name: 'web', price: 500 },
     { name: 'seo', price: 300 },
@@ -17,7 +20,6 @@ export class BudgetService {
 
   agregarWebService(numPaginas: number, numIdiomas: number) {
     this.webServiceResult = numPaginas * numIdiomas * 30;
-    console.log(this.webServiceResult);
     this.calcularTotal();
     return this.webServiceResult;
   }
@@ -49,9 +51,7 @@ export class BudgetService {
 
   calcularTotal() {
     this.precioTotal = this.acumulador + this.webServiceResult;
-    console.log(
-      `total: ${this.precioTotal} acumulador: ${this.acumulador} webservice: ${this.webServiceResult}`
-    );
+    console.log(this.precioTotal);
     return this.precioTotal;
   }
 

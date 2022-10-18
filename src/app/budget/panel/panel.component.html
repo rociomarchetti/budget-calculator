@@ -1,71 +1,36 @@
 <form (ngSubmit)="guardar()" [formGroup]="formularioWeb">
-    <div class="mb-3 row">
+    <div class="mb-3 ms-3 row">
         <label class="col-form-label">Número de páginas</label>
-        <div class="col-sm-2">
+        <div class="col-sm-2 input-group w-25">
+            <button type="button" class="btn btn-info text-light"
+                (click)="sumar('paginas')"><strong>+</strong></button>
             <input type="number"
                 class="form-control"
-                formControlName="paginas">
-            <span class="form-text text-danger"
-                *ngIf="campoNoEsValido('paginas')">
-                El número debe ser mayor de cero
-            </span>
+                formControlName="paginas"
+                [(ngModel)]="numPaginas">
+            <button type="button" class="btn btn-info text-light"
+                (click)="restar('paginas')"><strong>-</strong></button>
         </div>
-    </div>
-    <div class="mb-3 row">
-        <label>Número de idiomas</label>
-        <div class="col-sm-2">
-            <input type="number"
-                class="form-control"
-                formControlName="idiomas">
-            <span class="form-text text-danger"
-                *ngIf="campoNoEsValido('idiomas')">
-                El número debe ser mayor de cero
-            </span>
-        </div>
-    </div>
-<!--     <div class="row">
-        <div class="col mb-2">
-            <button type="submit"
-                class="btn btn-primary"
-                (click)="agregarWebService(numPaginas, numIdiomas)">
-                Calcular
-            </button>
-            <span class="m-2">Subtotal: +{{webServiceResult}}€</span>
-        </div>
-    </div> -->
-</form>
-
-<!-- <div class="col-6 p-2">
-    <label class="col-form-label">Languages
-    </label>
-</div>
-<div class="col-sm-2">
-    <div class="input-group">
-        <button type="button" class="btn btn-info text-light"><strong>+</strong></button>
-        <input type="number" class="form-control" formControlName="languages" />
-        <button type="button" class="btn btn-info text-light"><strong>-</strong></button>
-    </div>
-</div> -->
-<!-- <div class="col-6 p-2">
-    <label class="col-form-label">Pages
-        <span
-            type="button"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-            class="bi bi-question-circle">
+        <span class="form-text text-danger"
+            *ngIf="campoNoEsValido('paginas')">
+            El número debe ser mayor de cero
         </span>
-    </label>
-</div>
-<div class="col-sm-6">
-    <div class="input-group">
-        <button type="button" class="btn btn-info text-light"><strong>+</strong></button>
-        <input
-            type="number"
-            class="form-control"
-            min="1"
-            oninput="this.quantity"
-            formControlName="pages"
-            />
-        <button type="button" class="btn btn-info text-light"><strong>-</strong></button>
     </div>
-</div> -->
+    <div class="mb-3 ms-3 row">
+        <label>Número de idiomas</label>
+        <div class="col-sm-2 input-group w-25">
+            <button type="button" class="btn btn-info text-light"
+                (click)="sumar('idiomas')"><strong>+</strong></button>
+            <input type="number"
+                class="form-control"
+                formControlName="idiomas"
+                [(ngModel)]="numIdiomas">
+            <button type="button" class="btn btn-info text-light"
+                (click)="restar('idiomas')"><strong>-</strong></button>
+        </div>
+        <span class="form-text text-danger"
+            *ngIf="campoNoEsValido('idiomas')">
+            El número debe ser mayor de cero
+        </span>
+    </div>
+</form>
