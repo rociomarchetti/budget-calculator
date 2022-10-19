@@ -11,9 +11,10 @@ import { BudgetService } from './services/budget.service';
 import { PanelComponent } from './budget/panel/panel.component';
 import { WelcomePageComponent } from './budget/welcome-page/welcome-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BudgetListComponent } from './budget/budget-list/budget-list.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, PanelComponent, WelcomePageComponent, ModalComponent],
+  declarations: [AppComponent, HomeComponent, PanelComponent, WelcomePageComponent, ModalComponent, BudgetListComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, NgbModule],
   providers: [BudgetService],
   bootstrap: [AppComponent],

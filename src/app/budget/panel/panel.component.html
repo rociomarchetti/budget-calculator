@@ -1,7 +1,7 @@
 <form (ngSubmit)="guardar()" [formGroup]="formularioWeb">
     <div class="mb-3 ms-3 row">
         <label class="col-form-label">Número de páginas</label>
-        <div class="col-sm-2 input-group w-25">
+        <div class="col-sm-2 input-group w-50">
             <button type="button" class="btn btn-info text-light"
                 (click)="sumar('paginas')"><strong>+</strong></button>
             <input type="number"
@@ -19,7 +19,7 @@
     </div>
     <div class="mb-3 ms-3 row">
         <label>Número de idiomas</label>
-        <div class="col-sm-2 input-group w-25">
+        <div class="col-sm-2 input-group w-50">
             <button type="button" class="btn btn-info text-light"
                 (click)="sumar('idiomas')"><strong>+</strong></button>
             <input type="number"

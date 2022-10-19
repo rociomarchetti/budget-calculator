@@ -1,0 +1,28 @@
+
+<h4>Mis Presupuestos</h4>
+<hr>
+
+<div class="row">
+    <div class="col">
+
+        <table class="table table-striped">
+            <thead>
+                <tr class="justify-content-around">
+                    <th scope="col">id</th>
+                    <th scope="col">Titulo del presupuesto</th>
+                    <th scope="col">Nombre del usuario</th>
+                    <th scope="col">Precio total</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <tr *ngFor="let item of budgetList">
+                    <th scope="row"><strong>{{item.id}}</strong></th>
+                    <td>{{item.budgetTitle}}</td>
+                    <td>{{item.userName}}</td>
+                    <td>{{item.totalPrice}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

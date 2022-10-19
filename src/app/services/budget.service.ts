@@ -1,3 +1,4 @@
+import { Budget } from './../interfaces/budget.interface';
 import { Injectable } from '@angular/core';
 import { Service } from '../interfaces/service.interface';
 
@@ -10,6 +11,8 @@ export class BudgetService {
   numPaginas: number = 1;
   numIdiomas: number = 1;
 
+  budgetList: Budget[] = [];
+
   services: Service[] = [
     { name: 'web', price: 500 },
     { name: 'seo', price: 300 },
@@ -17,6 +20,11 @@ export class BudgetService {
   ];
 
   constructor() {}
+
+  agregarPresupuesto(nuevo: Budget) {
+    this.budgetList.push(nuevo)
+    console.log(this.budgetList)
+  }
 
   agregarWebService(numPaginas: number, numIdiomas: number) {
     this.webServiceResult = numPaginas * numIdiomas * 30;
@@ -51,11 +59,14 @@ export class BudgetService {
 
   calcularTotal() {
     this.precioTotal = this.acumulador + this.webServiceResult;
-    console.log(this.precioTotal);
     return this.precioTotal;
   }
 
   get total() {
     return this.precioTotal;
+  }
+
+  get list() {
+    return this.budgetList
   }
 }
