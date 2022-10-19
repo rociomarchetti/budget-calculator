@@ -10,6 +10,7 @@
                 [(ngModel)]="numPaginas">
             <button type="button" class="btn btn-info text-light"
                 (click)="restar('paginas')"><strong>-</strong></button>
+            <app-modal></app-modal>
         </div>
         <span class="form-text text-danger"
             *ngIf="campoNoEsValido('paginas')">
@@ -27,6 +28,7 @@
                 [(ngModel)]="numIdiomas">
             <button type="button" class="btn btn-info text-light"
                 (click)="restar('idiomas')"><strong>-</strong></button>
+            <app-modal></app-modal>
         </div>
         <span class="form-text text-danger"
             *ngIf="campoNoEsValido('idiomas')">
