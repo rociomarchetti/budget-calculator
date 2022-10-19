@@ -42,4 +42,4 @@ export class HomeComponent {
     this.precioTotal = this.BudgetService.calcularTotal();
     return this.precioTotal;
   }
-}
+} 

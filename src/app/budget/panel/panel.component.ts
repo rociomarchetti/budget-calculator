@@ -8,8 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['panel.component.css'],
 })
 export class PanelComponent {
-  numPaginas: number;
-  numIdiomas: number;
+  numPaginas: number = 1;
+  numIdiomas: number = 1;
 
   formularioWeb: FormGroup = this.fb.group({
     paginas: [, [Validators.required, Validators.min(1)]],
