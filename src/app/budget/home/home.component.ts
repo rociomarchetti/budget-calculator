@@ -58,12 +58,24 @@ export class HomeComponent {
     );
   }
 
+  incluirfecha() {
+    let date = new Date();
+    let day = date.getDate().toString()
+    let month = date.getMonth().toString()
+    let year = date.getFullYear().toString()
+    let newDate = `${day}/${month}/${year}`
+    console.log(date)
+    return newDate
+  }
+  
+
   saveBudget() {
     let newBudget: Budget = {
       id: this.budgetList.length + 1,
       userName: this.formPresupuesto.value.usuario,
       budgetTitle: this.formPresupuesto.value.titulo,
-      totalPrice: this.precioTotal
+      totalPrice: this.precioTotal,
+      date: this.incluirfecha()
     }
 
     if (this.formPresupuesto.valid && this.precioTotal > 0) {

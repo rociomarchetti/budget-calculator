@@ -3,4 +3,5 @@ export interface Budget {
   userName: string;
   budgetTitle: string;
   totalPrice: number;
+  date: string;
 }
