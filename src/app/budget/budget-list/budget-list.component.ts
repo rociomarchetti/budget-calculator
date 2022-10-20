@@ -1,3 +1,4 @@
+import { Budget } from './../../interfaces/budget.interface';
 import { Component, OnInit } from '@angular/core';
 import { BudgetService } from './../../services/budget.service';
 
@@ -51,6 +52,26 @@ export class BudgetListComponent implements OnInit {
       return 0;
     });
     this.imprimirLista();
+  }
+
+  tituloABuscar: string = '';
+  busqueda: boolean = false;
+
+  presu: string = '';
+  presuID: number = 0;
+  presuUser: string = '';
+  presuTotal: number = 0;
+
+  buscar() {
+    this.busqueda = true;
+    let index = this.budgetList.findIndex(
+      (presu) => presu.budgetTitle === this.tituloABuscar
+    );
+    let presuBuscado = this.budgetList[index];
+    this.presu = presuBuscado.budgetTitle;
+    this.presuID = presuBuscado.id;
+    this.presuUser = presuBuscado.userName;
+    this.presuTotal = presuBuscado.totalPrice;
   }
 
   imprimirLista() {

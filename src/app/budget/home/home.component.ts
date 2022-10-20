@@ -64,7 +64,6 @@ export class HomeComponent {
     let month = date.getMonth().toString()
     let year = date.getFullYear().toString()
     let newDate = `${day}/${month}/${year}`
-    console.log(date)
     return newDate
   }
   
