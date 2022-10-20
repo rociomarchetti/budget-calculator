@@ -19,7 +19,7 @@
                 <span><strong class="me-1">Titulo del presupuesto:</strong>{{presu}}</span><br>
                 <span><strong class="me-1">ID:</strong>{{presuID}}</span><br>
                 <span><strong class="me-1">Nombre del usuario:</strong>{{presuUser}}</span><br>
-                <span><strong class="me-1">Precio total:</strong>{{presuTotal}}</span><br>
+                <span><strong class="me-1">Precio total:</strong>{{presuTotal}}€</span><br>
                 <span></span>
             </div>
         </ng-template>
@@ -31,31 +31,31 @@
 <div class="row">
     <div class="btn-group" role="group">
         <h6 class="mt-3">Ordenar presupuestos:</h6>
-        <button type="button" class="btn btn-info m-2" (click)="porAlfabeto()">A-Z</button>
-        <button type="button" class="btn btn-info m-2" (click)="porFecha()">Fecha</button>
-        <button type="button" class="btn btn-info m-2" (click)="porID()">ID</button>
+        <button type="button" class="btn btn-info m-2 rounded-pill" (click)="porAlfabeto()">A-Z</button>
+        <button type="button" class="btn btn-info m-2 rounded-pill" (click)="porFecha()">Fecha</button>
+        <button type="button" class="btn btn-info m-2 rounded-pill" (click)="porID()">ID</button>
     </div>
 </div>
 
 <div class="row">
-    <div class="col">
+    <div class="col-12">
 
         <table class="table table-striped">
             <thead>
                 <tr class="justify-content-around">
-                    <th scope="col">id</th>
-                    <th scope="col">Titulo del presupuesto</th>
-                    <th scope="col">Nombre del usuario</th>
-                    <th scope="col">Precio total</th>
+                    <th scope="row">ID</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Total</th>
                     <th scope="col">Fecha</th>
                 </tr>
             </thead>
-            <tbody class="text-center">
+            <tbody>
                 <tr *ngFor="let item of imprimirLista()">
                     <th scope="row"><strong>{{item.id}}</strong></th>
                     <td>{{item.budgetTitle}}</td>
                     <td>{{item.userName}}</td>
-                    <td>{{item.totalPrice}}</td>
+                    <td>{{item.totalPrice}}€</td>
                     <td>{{item.date}}</td>
                 </tr>
             </tbody>

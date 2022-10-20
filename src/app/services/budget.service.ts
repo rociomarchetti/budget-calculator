@@ -23,7 +23,6 @@ export class BudgetService {
 
   agregarPresupuesto(nuevo: Budget) {
     this.budgetList.push(nuevo)
-    console.log(this.budgetList)
   }
 
   agregarWebService(numPaginas: number, numIdiomas: number) {
