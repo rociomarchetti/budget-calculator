@@ -1,0 +1,17 @@
+.budgets-list-area {
+  background-color: black;
+  color: aliceblue;
+  height: 80vh;
+  padding: 2rem;
+  border-radius: 30px;
+}
+
+.table-area th {
+  color: aliceblue;
+  padding: 2rem;
+}
+
+.table-area td {
+  color: aliceblue;
+  padding: 2rem;
+}

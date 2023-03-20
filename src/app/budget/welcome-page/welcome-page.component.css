@@ -1,9 +1,23 @@
 .welcomePage {
     width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
     margin: 0%;
     padding: 0%;
-    margin-top: 10%;
     text-align: center;
+    animation: color-change-2x 2s linear infinite alternate both;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #543E5B;
+    width: 100%;
+    padding: 5%;
 }
 
 h1 {
@@ -11,5 +25,18 @@ h1 {
 }
 
 h3 {
-    color: #2E86AB;
+    color: #9BD8F9;
+}
+
+img {
+    width: 50px;
+}
+
+@keyframes color-change-2x {
+  0% {
+    background: #19dcea;
+  }
+  100% {
+    background: #b22cff;
+  }
 }
