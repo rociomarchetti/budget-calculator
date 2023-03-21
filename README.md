@@ -1,5 +1,5 @@
-# A random jokes app :abacus:
-Deploy link: https://jokes-app-exercise.netlify.app/
+# A budget calculator for web services :abacus:
+Deploy link: https://costs-calculator.netlify.app/
 
 ![Animation](https://user-images.githubusercontent.com/98389214/226375697-6394bd68-7a3d-493b-8ce6-7f2a9a5067b0.gif)
 
