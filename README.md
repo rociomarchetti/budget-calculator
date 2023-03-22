@@ -5,7 +5,7 @@ Deploy link: https://costs-calculator.netlify.app/
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b92cbf75-63e9-4075-8fba-8b8d948db270/deploy-status)](https://app.netlify.com/sites/costs-calculator/deploys)
 
-App that exchanges the call to apis that return jokes randomly and can be qualified by the user.
+App that allows the client to generate a budget indicating the type of service needed. The budgets are saved and the customer can then search through all of them using a search engine and various filters.
 
 ## :wrench: **Tech used in this project**
 
